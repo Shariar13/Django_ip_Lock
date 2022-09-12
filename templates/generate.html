@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P_Gen</title>
+    <style>
+        .container {
+            width: 70%;
+            height: 500px;
+            margin: auto;
+            border: 1px solid black;
+            padding-left: 99px;
+            padding-right: 99px;
+            text-align: center;
+        }
+
+        .box {
+            width: 100%;
+            height: 300px;
+            border: 1px solid black;
+            margin-top: 29px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ from }}
+            <input type="hidden" name="user_ip" value="{{ ip }}" />
+            <label>Please set Username: </label>
+            <br>
+            <input type="text" name="username" />
+            <br>
+            <br>
+            <input type="submit" value="Generate">
+        </form>
+
+    </div>
+</body>
+
+</html>
